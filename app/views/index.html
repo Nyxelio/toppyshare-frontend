@@ -12,15 +12,15 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#" class="">My Toppy</a>
+                    <li class="active"><a href="#" class="">My Toppy</a>
 
                     </li>
-                    <li class="active"><a href="http://bootsnipp.com/snippets/featured/nav-account-manager" target="_blank" class="">Rechercher</a>
+                    <li ><a target="_blank" class="">Rechercher</a>
 
                     </li>
-                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Les Catégories
+                    <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown">Les Catégories
                     <span class="caret"></span>
-                    </a>
+                    
 
                         <ul class="dropdown-menu">
                             <li><a href="#" class="">Cinéma</a>
@@ -44,17 +44,18 @@
                             <li><a href="#" class="">Jeux vidéos</a>
 
                             </li>
-                            <li><a href="#" class="">télévisuel</a>
+                            <li><a href="#" class="">Télévisuel</a>
 
                             </li>
                             <li><a href="#" class="">Destinations</a>
 
                             </li>
                         </ul>
+
                     </li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <ul class="nav navbar-nav navbar-right" ng-hide="false">
+                    <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown">
                         <span class="glyphicon glyphicon-user"></span>&nbsp;
                         <strong class="">USERNAME</strong>
                         <span class="glyphicon glyphicon-chevron-down"></span>
@@ -63,7 +64,7 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="navbar-login">
-                                    <div class="row">
+                                    <div class="row" >
                                         <div class="col-lg-4">
                                             <p class="text-center"> <span class="glyphicon glyphicon-user icon-size"></span>
 
@@ -95,6 +96,13 @@
                             </li>
                         </ul>
                     </li>
+                </ul>
+                
+                <!-- CREER LES BUTTON DE CONNECTION -->
+                <ul class="nav navbar-nav navbar-right" ng-hide="true">
+                    <a href="views/user.html" class="btn btn-default">Se connecter</a>
+                    <a href="#" class="btn btn-default">S'incrire</a>
+                    
                 </ul>
             </div>
         </div>
