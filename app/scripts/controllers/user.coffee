@@ -8,7 +8,7 @@
  # Controller of the testFrontEndApp
 ###
 
-app = angular.module('testFrontEndApp')
+app = angular.module('sample')
 app.controller 'UserCtrl', ($scope, serviceAjax) ->
   email = $scope.email
   password = $scope.password
@@ -21,34 +21,40 @@ app.controller 'UserCtrl', ($scope, serviceAjax) ->
 
   return
 
-var app = angular.module('sample', [])
-    .directive('equalsTo', [function () {
-    /*
-     * <input type="password" ng-model="Password" />
-     * <input type="password" ng-model="ConfirmPassword" equals-to="Password" />
-     */
-    return {
-        restrict: 'A', // S'utilise uniquement en tant qu'attribut
-        scope: true,
-        require: 'ngModel',
-        link: function (scope, elem, attrs, control) {
-            var check = function () {
-                //Valeur du champs courant 
-                var v1 = scope.$eval(attrs.ngModel); // attrs.ngModel = “ConfirmPassword”
 
-                //valeur du champ à comparer
-                var v2 = scope.$eval(attrs.equalsTo).$viewValue; // attrs.equalsTo = “Password”
+ #Debut partie jen
+app = angular.module('sample', []).directive('equalsTo', [ ->
 
-                return v1 == v2;
-            };
+  ###
+  # <input type="password" ng-model="Password" />
+  # <input type="password" ng-model="ConfirmPassword" equals-to="Password" />
+  ###
 
-            scope.$watch(check, function (isValid) {
-                // Défini si le champ est valide
-                control.$setValidity("equalsTo", isValid);
-            });
-        }
-    };
-}]);
+  {
+    restrict: 'A'
+    scope: true
+    require: 'ngModel'
+    link: (scope, elem, attrs, control) ->
+
+      check = ->
+        #Valeur du champs courant 
+        v1 = scope.$eval(attrs.ngModel)
+        # attrs.ngModel = “ConfirmPassword”
+        #valeur du champ à comparer
+        v2 = scope.$eval(attrs.equalsTo).$viewValue
+        # attrs.equalsTo = “Password”
+        v1 == v2
+
+      scope.$watch check, (isValid) ->
+        # Défini si le champ est valide
+        control.$setValidity 'equalsTo', isValid
+        return
+      return
+
+  }
+ ])
+
+ ##Fin partie jen
 
 #var app = angular.module('testFrontEndApp')
 #app.controller('UserCtrl', function ($scope) {

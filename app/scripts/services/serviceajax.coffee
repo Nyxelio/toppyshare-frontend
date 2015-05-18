@@ -8,7 +8,7 @@
  # Factory in the testFrontEndApp.
 ###
 
-angular.module('coursExoApp').factory 'serviceAjax', ($http, $q) ->
+angular.module('testFrontEndApp').factory 'serviceAjax', ($http, $q) ->
   {
     search: (query, page) ->
       $http.get 'http://localhost:3000/search?q=' + query + '&page=' + page
