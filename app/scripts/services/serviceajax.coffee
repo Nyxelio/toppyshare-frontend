@@ -13,8 +13,8 @@ angular.module('coursExoApp').factory 'serviceAjax', ($http, $q) ->
     search: (query, page) ->
       $http.get 'http://localhost:3000/search?q=' + query + '&page=' + page
 
-    login: (data) ->
-      $http.post('http://localhost:3000/api/users', data)
+    login: () ->
+      $http.post('http://localhost:3000/api/users', {user: {email: "arnold@nodomain.tld", password: "azertyui12"} })
 
   }
 
