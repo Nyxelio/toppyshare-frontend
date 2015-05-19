@@ -16,8 +16,8 @@ angular.module('testFrontEndApp').factory 'serviceAjax', ($http, $q) ->
     login: (data) ->
       $http.post('http://localhost:3000/api/users', {user: {email: "arnold4@nodomain.tld", password: "azertyui12"} })
 
-    register (data) ->
-      $http.post('http://localhost:3000/api/users', data)   	
+    #register (data) ->
+    #  $http.post('http://localhost:3000/api/users', data)   	
 
   }
 
