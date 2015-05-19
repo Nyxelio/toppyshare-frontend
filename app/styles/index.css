@@ -30,7 +30,7 @@ body {
 /* Not required for template or sticky footer method. */
 
 #wrap > .container {
-  padding: 60px 15px 0;
+  padding: 50px 15px 0;
 }
 .container .credit {
   margin: 20px 0;
@@ -44,18 +44,18 @@ body {
 code {
   font-size: 80%;
 }
-/* nav bar*/
 
+/* nav bar*/
 .navbar-login
 {
-    width: 305px;
+    width: 450px;
     padding: 10px;
     padding-bottom: 0px;
 }
 
 .navbar-login-session
 {
-    padding: 10px;
+    padding: 20px;
     padding-bottom: 0px;
     padding-top: 0px;
 }
@@ -79,10 +79,9 @@ code {
 -webkit-transition-duration: 0.5s; 
 -moz-transition-duration: 0.5s;
 -o-transition-duration: 0.5s;
-			}           
-/* 
-    Only Needed in Multi-Coloured Variation 
-                                               */
+			} 
+
+/*  Multi-Coloured Variation */
 			.social-fb:hover {
 				color: #3B5998;
 			}
@@ -95,8 +94,8 @@ code {
 			.social-em:hover {
 				color: #f39c12;
 			}
-/* nav bar search*/
 
+/* nav bar search*/
   .navbar-collapse form[role="search"] {
     position: absolute;
     top: 0px;
@@ -132,10 +131,10 @@ code {
   :: Login Section
   -------------------------------------------------- */
 #login {
-    padding-top: 50px
+    padding-top: 150px
 }
 #login .form-wrap {
-    width: 30%;
+    width: 45%;
     margin: 0 auto;
 }
 #login h1 {
