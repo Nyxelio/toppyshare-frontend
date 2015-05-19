@@ -13,8 +13,11 @@ angular.module('testFrontEndApp').factory 'serviceAjax', ($http, $q) ->
     search: (query, page) ->
       $http.get 'http://localhost:3000/search?q=' + query + '&page=' + page
 
-    login: () ->
-      $http.post('http://localhost:3000/api/users', {user: {email: "arnold@nodomain.tld", password: "azertyui12"} })
+    login: (data) ->
+      $http.post('http://localhost:3000/api/users', {user: {email: "arnold4@nodomain.tld", password: "azertyui12"} })
+
+    register (data) ->
+      $http.post('http://localhost:3000/api/users', data)   	
 
   }
 

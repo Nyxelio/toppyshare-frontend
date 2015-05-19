@@ -7,12 +7,18 @@
  # # MainCtrl
  # Controller of the testFrontEndApp
 ###
-angular.module 'testFrontEndApp'
-  .controller 'MainCtrl', ($scope) ->
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate'
-      'AngularJS'
-      'Karma'
-    ]
+
+app = angular.module('testFrontEndApp')
+app.controller 'MainCtrl', ($scope, serviceAjax) ->
+  email = $scope.email
+  password = $scope.password
+
+  $scope.seConnecter = ->
+    serviceAjax.login().success (status) ->
+      console.log status
+      return
+    return
+
+  return
 
     

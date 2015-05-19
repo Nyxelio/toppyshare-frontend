@@ -8,10 +8,12 @@
  # Controller of the testFrontEndApp
 ###
 
-app = angular.module('sample')
+app = angular.module('testFrontEndApp')
 app.controller 'UserCtrl', ($scope, serviceAjax) ->
   email = $scope.email
   password = $scope.password
+
+  data = {user: {email: "arnold4@nodomain.tld", password: "azertyui12"} }
 
   $scope.connectionUser = ->
     serviceAjax.login().success (status) ->
