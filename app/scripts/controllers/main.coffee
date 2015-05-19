@@ -13,7 +13,7 @@ app.controller 'MainCtrl', ($scope, serviceAjax) ->
   email = $scope.email
   password = $scope.password
 
-  $scope.seConnecter = ->
+  $scope.connectionUser = ->
     serviceAjax.login().success (status) ->
       console.log status
       return

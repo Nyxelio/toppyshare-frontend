@@ -13,15 +13,21 @@ app.controller 'UserCtrl', ($scope, serviceAjax) ->
   email = $scope.email
   password = $scope.password
 
-  data = {user: {email: "arnold4@nodomain.tld", password: "azertyui12"} }
+  $scope.jsonLogin = {user: {email: "arnold4@nodomain.tld", password: "azertyui12"}}
+  $scope.jsonRegister = {"user": {"email": "arnold4@nodomain.tld", "password": "azertyui12", "password_confirmation": "azertyui12", "name": "Arnold4"} }
 
-  $scope.connectionUser = ->
-    serviceAjax.login().success (status) ->
+  $scope.seConnecter = ->
+    serviceAjax.login($scope.jsonLogin).success (status) ->
       console.log status
       return
     return
 
-  return
+   $scope.register = ->
+   	serviceAjax.register($scope.jsonRegister).success (status) ->
+   		console.log status
+   		return
+   	return
+return
 
 
  #Debut partie jen
@@ -58,6 +64,8 @@ app = angular.module('sample', []).directive('equalsTo', [ ->
 
  ##Fin partie jen
 
+
+#Exemple en js
 #var app = angular.module('testFrontEndApp')
 #app.controller('UserCtrl', function ($scope) {
 #  	var email = $scope.email;
