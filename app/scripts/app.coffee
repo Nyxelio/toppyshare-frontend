@@ -8,16 +8,15 @@
  #
  # Main module of the application.
 ###
-angular
-  .module 'testFrontEndApp', [
+app = angular.module 'testFrontEndApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
-  ]
-  .config ($routeProvider) ->
+    'ngTouch']
+
+app.config ($routeProvider) ->
     $routeProvider
       .when '/',
         templateUrl: 'views/index.html'
@@ -28,6 +27,30 @@ angular
       .when '/user',
         templateUrl: 'views/user.html'
         controller: 'UserCtrl'
+      .when '/top',
+        templateUrl: 'views/top.html'
+        controller: 'TopCtrl'
       .otherwise
         redirectTo: '/'
 
+
+app.config ['$httpProvider', ($httpProvider) ->
+  $httpProvider.interceptors.push ($window, $q, $location) ->
+    {
+      'request': (config) ->
+        config.headers = config.headers or {}
+        if $window.sessionStorage.getItem('token')
+          #Ajout du token dans le headers
+          config.headers = 'X-User-Token': $window.sessionStorage.getItem 'token'
+        return config or $q.when(config)
+
+
+      'response': (response) ->
+        if response.status == 401
+          # Redirection vers la page d'accueil
+          $location.path '/'
+        else
+        response or $q.when(response)
+
+    }
+]

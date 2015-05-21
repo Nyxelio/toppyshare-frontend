@@ -14,7 +14,7 @@ angular.module('testFrontEndApp').factory 'serviceAjax', ($http, $q) ->
       $http.get 'http://localhost:3000/search?q=' + query + '&page=' + page
 
     login: (data) ->
-      $http.post('http://localhost:3000/api/users', data)
+      $http.post('http://localhost:3000/api/sessions', data)
 
     register: (data) ->
       $http.post('http://localhost:3000/api/users', data)   	
