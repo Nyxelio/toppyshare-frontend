@@ -31,8 +31,11 @@ app.config ($routeProvider) ->
         templateUrl: 'views/top.html'
         controller: 'TopCtrl'
       .when '/myTop',
-        templateUrl: 'views/userdashboard.html'
-        controller: 'dashBoardCtrl'
+        templateUrl: 'views/mytop.html'
+        controller: 'MytopCtrl'
+      .when '/admin',
+        templateUrl: 'views/admin.html'
+        controller: 'AdminCtrl'
       .otherwise
         redirectTo: '/'
 
