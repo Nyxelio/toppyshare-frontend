@@ -9,4 +9,7 @@
 ###
 app = angular.module 'testFrontEndApp'
 app.controller 'TopCtrl', ($scope, $window, serviceAjax) ->
-	 
+
+	 $scope.createTop = ->
+	 	serviceAjax.success (data)->
+
