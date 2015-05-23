@@ -8,17 +8,6 @@
  # Controller of the testFrontEndApp
 ###
 
-app = angular.module('testFrontEndApp')
-app.controller 'MainCtrl', ($scope, serviceAjax) ->
-  email = $scope.email
-  password = $scope.password
-
-  $scope.connectionUser = ->
-    serviceAjax.login().success (status) ->
-      console.log status
-      return
-    return
-
-  return
-
-    
+app = angular.module 'testFrontEndApp'
+app.controller 'MainCtrl', ($scope, $location, $window, serviceAjax) ->
+ 

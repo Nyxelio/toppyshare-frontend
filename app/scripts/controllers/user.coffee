@@ -10,36 +10,13 @@
 
 app = angular.module('testFrontEndApp')
 app.controller 'UserCtrl', ($scope, $location, $window, serviceAjax) ->
-  email = $scope.email
-  password = $scope.password
 
   #Initialisation de la erreur d'affiché une erreur lors de l'inscription
   $scope.erreur = false
-  
-  $scope.seConnecter = ->
-    #Creation de l'objet json 
-    #A FINIR AU NIV DE LA CREATION DU JSON EN FONCTION DU FORMULAIRE
-    $scope.jsonLogin = {user: {email: "arnold4@nodomain.tld", password: "azertyui12"}}
+  $scope.isLogin = $window.sessionStorage.getItem 'isLogin'
 
-    #Appelle au service accès au données et stockage de l'id, du token et du mail
-    serviceAjax.login($scope.jsonLogin).success ((data, status) ->
-      #Stockage des données dans les variables fenetre session
-      $window.sessionStorage.setItem 'id', data.user.id
-      $window.sessionStorage.setItem 'token', data.user.authentication_token
-      $window.sessionStorage.setItem 'email', data.user.email
-      #$location.path '/'
-    )
-    serviceAjax.login($scope.jsonLogin).error((status) ->
-      #On enleve les données qui aurait être stocké
-      $window.sessionStorage.removeItem 'id'
-      $window.sessionStorage.removeItem 'token'
-      $window.sessionStorage.removeItem 'email'
-      # TODO: Show something like "Username or password invalid."
-      $scope.erreur = true
-      )
-      
     # Probleme 
-   $scope.register = ->
+  $scope.register = ->
     #Creation de l'objet json 
     #$scope.jsonRegister = {"user": {"email": "arnold4@nodomain.tld", "password": "azertyui12", "password_confirmation": "azertyui12", "name": "Arnold4"} }
     $scope.jsonRegister = 

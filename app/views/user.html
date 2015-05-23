@@ -10,6 +10,11 @@
                 <b>Compte déjà pris </b>
             </span>         
         </div>
+        <div class="form-group" ng-show="isLogin">
+            <span class="text-danger col-sm-offset-3" >
+                <b>Vous êtes dèjà connecté</b>
+            </span>         
+        </div>         
 
 
         <div class="form-group" ng-class="{'has-error': registerForm.$dirty && registerForm.pseudo.$invalid, 'has-success': registerForm.pseudo.$valid}">
@@ -28,6 +33,7 @@
             <div class="col-sm-9">
                 <input id="Email" type="email" class="form-control" required name="Email" ng-model="email" />
             </div>
+            
         </div>
         <div class="form-group" ng-class="{'has-error': registerForm.$dirty && registerForm.Password.$invalid, 'has-success': registerForm.Password.$valid}">
             <label class="col-sm-3 control-label" for="Password">Password</label>

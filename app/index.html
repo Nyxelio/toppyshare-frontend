@@ -30,7 +30,7 @@
                             <span class="icon-bar"></span>
 
                             </button>
-                            <a target="_blank" href="#/" class="navbar-brand">Toppy Home</a>
+                            <a href="#/" class="navbar-brand">Toppy Home</a>
                             </div>
                         <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
@@ -65,10 +65,12 @@
                           
                     <ul class="nav navbar-nav navbar-right">
                     
+                    
                     <!--Bouton se connecter-->
-                    <a class="navbar-brand" data-toggle="dropdown" ng-click="openLogin()">S'identifier</a>
+                    <a class="navbar-brand" data-toggle="dropdown" ng-click="openLogin()" href="#/login">S'identifier</a>
                     <!-- Boutton S'enregistrer -->
                     <a href="#/user" class="navbar-brand">S'enregistrer</a>
+                    
                     
                     <li><button type="submit" class="navbar-brand"><span class="glyphicon glyphicon-search"></span></button></li>
                         <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown">
@@ -97,7 +99,7 @@
                                 </div>    
                             </li>
                             
-                            <li class="divider"></li>
+                            <li class="/divider"></li>
                                 <li>
                                     <div class="navbar-login navbar-login-session">
                                         <div class="row">
@@ -158,9 +160,9 @@
         <script src="scripts/services/serviceajax.js"></script>
         <script src="scripts/controllers/top.js"></script>
         <script src="scripts/services/authinterceptor.js"></script>
-        <script src="scripts/controllers/dashboard.js"></script>
         <script src="scripts/controllers/mytop.js"></script>
         <script src="scripts/controllers/admin.js"></script>
+        <script src="scripts/controllers/login.js"></script>
         <!-- endbuild -->
 </body>
 </html>

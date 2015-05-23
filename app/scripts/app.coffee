@@ -36,6 +36,9 @@ app.config ($routeProvider) ->
       .when '/admin',
         templateUrl: 'views/admin.html'
         controller: 'AdminCtrl'
+      .when '/login',
+        templateUrl: 'views/login.html'
+        controller: 'LoginCtrl'
       .otherwise
         redirectTo: '/'
 
