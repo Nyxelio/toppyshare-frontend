@@ -8,7 +8,7 @@
  # Controller of the testFrontEndApp
 ###
 app = angular.module 'testFrontEndApp'
-app.controller 'MytopCtrl', ($scope, $window,serviceAjax) ->
+app.controller 'DashTopCtrl', ($scope, $window,serviceAjax) ->
   id = $window.sessionStorage.getItem 'id'
 
   #Partie init mes tops

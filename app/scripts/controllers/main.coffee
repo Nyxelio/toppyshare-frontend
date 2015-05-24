@@ -10,4 +10,4 @@
 
 app = angular.module 'testFrontEndApp'
 app.controller 'MainCtrl', ($scope, $location, $window, serviceAjax) ->
- 
+ 	
