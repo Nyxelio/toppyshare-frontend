@@ -1,10 +1,16 @@
 <html>
 <div ng-app="testFrontEndApp">
-<h3>Mise à jour de vos informations :</h3>
+<h3>Vos informations :</h3>
 
 <div ng-controller="UserCtrl">
     <form class="form-horizontal" name="registerForm" ng-submit="updateInfo()">
 
+        <div class="form-group" ng-show="error">
+            <span class="text-danger col-sm-offset-3" >
+                <b>{{erreurInfo}}</b>
+                <a href="#/login">ici</a>
+            </span>         
+        </div> 
 
         <div class="form-group" >
             <label class="col-sm-3 control-label" for="pseudo" >Pseudo</label>
