@@ -22,16 +22,17 @@ app.controller 'UserCtrl', ($scope, $location, $window, serviceAjax) ->
     $scope.jsonRegister = 
       {"user": {"email": $scope.email, "password": $scope.password, "password_confirmation": $scope.password,"name": $scope.pseudo}}
     
-    serviceAjax.register(($scope.jsonRegister).success (status) ->
+    serviceAjax.register($scope.jsonRegister).success ((status) ->
       $window.sessionStorage.setItem 'id', data.user.id
       $window.sessionStorage.setItem 'token', data.user.authentication_token
       $window.sessionStorage.setItem 'email', data.user.email
 
       $location.path '/'
-    ).error ((status) ->
+    )
+    serviceAjax.register($scope.jsonRegister).error (data, status) ->
       $scope.erreur = true
       console.log status
-    )
+    
      
   
 
