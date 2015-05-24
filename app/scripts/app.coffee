@@ -42,6 +42,9 @@ app.config ($routeProvider) ->
       .when '/userInfo',
         templateUrl: 'views/userinfo.html'
         controller: 'UserinfoCtrl'
+      .when '/about',
+        templateUrl: 'views/about.html'
+        controller: 'AboutCtrl'
       .otherwise
         redirectTo: '/'
 

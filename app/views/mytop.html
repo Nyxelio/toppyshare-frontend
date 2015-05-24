@@ -1,144 +1,195 @@
 <html>
+<link href="mytop.css">
 <body ng-app="testFrontEndApp">
 <div ng-controller="MytopCtrl">
-    <!--<div class="row alerts-container" data-ng-controller="AlertsCtrl" data-ng-show="alerts.length">
-	COUCOU JENNIFER COMME JE SAVAIS PAS CE QUE C'ETAIT LE ALERTCTRL ET COMME IL FOUTAIT LA MERDE JE L'AI MIS EN COMME
-    -->
-
-
-    <div class="row alerts-container" data-ng-show="alerts.length">
-      <div class="col-xs-12">
-        <alert data-ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
-      </div>
-    </div>
-
+ <article>
+    <h1>Mon Toppy</h1>
+  <aside>
+      <h3>Paneaux de modification</h3>
+      <dl>
+        <dd><div class="container">
     <div class="row">
-        <div class="col-lg-3 col-md-6 col-xs-12">
-            <rd-widget>
-                <rd-widget-body>
-                    <div class="widget-icon green pull-left">
-                        <i class="fa fa-users"></i>
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-list"></span>TITRE DE LA LISTE
+                    <div class="pull-right action-buttons">
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                <span class="glyphicon glyphicon-cog" style="margin-right: 0px;"></span>
+                            </button>
+                            <ul class="dropdown-menu slidedown">
+                                <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-pencil"></span>Edit</a></li>
+                                <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-trash"></span>Delete</a></li>
+                                <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-flag"></span>Flag</a></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="title">80</div>
-                    <div class="comment">Users</div>
-                </rd-widget-body>
-            </rd-widget>
-        </div>
-        <div class="col-lg-3 col-md-6 col-xs-12">
-            <rd-widget>
-                <rd-widget-body>
-                    <div class="widget-icon red pull-left">
-                        <i class="fa fa-tasks"></i>
-                    </div>
-                    <div class="title">16</div>
-                    <div class="comment">Servers</div>
-                </rd-widget-body>
-            </rd-widget>
-        </div>
-        <div class="col-lg-3 col-md-6 col-xs-12">
-            <rd-widget>
-                <rd-widget-body>
-                    <div class="widget-icon orange pull-left">
-                        <i class="fa fa-sitemap"></i>
-                    </div>
-                    <div class="title">225</div>
-                    <div class="comment">Documents</div>
-                </rd-widget-body>
-            </rd-widget>
-        </div>
-        <div class="col-lg-3 col-md-6 col-xs-12">
-            <rd-widget>
-                <rd-widget-body>
-                    <div class="widget-icon blue pull-left">
-                        <i class="fa fa-support"></i>
-                    </div>
-                    <div class="title">62</div>
-                    <div class="comment">Tickets</div>
-                </rd-widget-body>
-            </rd-widget>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-6">
-            <rd-widget>
-                <rd-widget-header icon="fa-tasks" title="Servers">
-                    <a href="#">Manage</a>
-                </rd-widget-header>
-                <rd-widget-body classes="medium no-padding">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <tbody>
-                                <tr><td>RDVMPC001</td><td>238.103.133.37</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-                                <tr><td>RDVMPC002</td><td>68.66.63.170</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-                                <tr><td>RDVMPC003</td><td>76.117.212.33</td><td><span tooltip="Server Down!" class="text-danger"><i class="fa fa-warning"></i></span></td></tr>
-                                <tr><td>RDPHPC001</td><td>91.88.224.5</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-                                <tr><td>RDESX001</td><td>197.188.15.93</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-                                <tr><td>RDESX002</td><td>168.85.154.251</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-      <head>
-                                <tr><td>RDESX003</td><td>209.25.191.61</td><td><span tooltip="Server Down!" class="text-danger"><i class="fa fa-warning"></i></span></td></tr>
-                                <tr><td>RDESX004</td><td>252.37.192.235</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-                                <tr><td>RDTerminal01</td><td>139.71.18.207</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-                                <tr><td>RDTerminal02</td><td>136.80.122.212</td><td><span tooltip="Could not connect!" class="text-warning"><i class="fa fa-flash"></i></span></td></tr>
-                                <tr><td>RDDomainCont01</td><td>196.80.245.33</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </rd-widget-body>
-            </rd-widget>
-        </div>
-        <div class="col-lg-6">
-            <rd-widget>
-                <rd-widget-header icon="fa-users" title="Users">
-                    <input type="text" placeholder="Search" class="form-control input-sm" />
-                </rd-widget-header>
-                <rd-widget-body classes="medium no-padding">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr><th class="text-center">ID</th><th>Username</th><th>Role</th><th>Account</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td class="text-center">1</td><td>Joe Bloggs</td><td>Super Admin</td><td>AZ23045</td></tr>
-                                <tr><td class="text-center">2</td><td>Timothy Hernandez</td><td>Admin</td><td>AU24783</td></tr>
-                                <tr><td class="text-center">3</td><td>Joe Bickham</td><td>User</td><td>AM23781</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </rd-widget-body>
-            <rd-widget>
-        </div>
-    </div>
-
-<div class="row">
-    <div class="col-lg-6">
-        <rd-widget>
-            <rd-widget-header icon="fa-plus" title="Extras">
-                <button class="btn btn-sm btn-info">Button</button>
-            </rd-widget-header>
-            <rd-widget-body>
-                <div class="message">
-                    This is a standard message which will also work the ".no-padding" class, I can also <span class="error">be an error message!</span>
                 </div>
-                <hr />
-                <div class="message">
-                    <a href="http://angular-ui.github.io/bootstrap/" target="_blank">UI Bootstrap</a> is included, so you can use <a href="#" tooltip="I'm a tooltip!">tooltips</a> and all of the other native Bootstrap JS components!
-                </ddiv>
-            </rd-widget-body>
-        </rd-widget>
-    </div>
-    <div class="col-lg-6">
-        <rd-widget>
-           div <rd-widget-header icon="fa-cog fa-spin" title="Loading Directive">
-                <a href="http://tobiasahlin.com/spinkit/" target="_blank">SpinKit</a>
-            </rd-widget-header>
-            <rd-widget-body>
-                <rd-loading></rd-loading>
-            </rd-widget-body>
-        </rd-widget>
-    </div>
-</div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                                    ITEM1
+                            <div class="pull-right action-buttons">
+                                <a><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a class="trash"><span class="glyphicon glyphicon-trash"></span></a>
+                                <a class="flag"><span class="glyphicon glyphicon-flag"></span></a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                                    ITEM2
+                            <div class="pull-right action-buttons">
+                                <a><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a class="trash"><span class="glyphicon glyphicon-trash"></span></a>
+                                <a class="flag"><span class="glyphicon glyphicon-flag"></span></a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                                    ITEM3
+                            <div class="pull-right action-buttons">
+                                <a><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a class="trash"><span class="glyphicon glyphicon-trash"></span></a>
+                                <a class="flag"><span class="glyphicon glyphicon-flag"></span></a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                                    ITEM4
+                            <div class="pull-right action-buttons">
+                                <a><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a class="trash"><span class="glyphicon glyphicon-trash"></span></a>
+                                <a class="flag"><span class="glyphicon glyphicon-flag"></span></a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                                    ITEM5
+                            <div class="pull-right action-buttons">
+                                <a><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a class="trash"><span class="glyphicon glyphicon-trash"></span></a>
+                                <a class="flag"><span class="glyphicon glyphicon-flag"></span></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+          </div>
+      </div>
+          </div>
+        </div>
+    </dd>
+    </dl>
+</aside>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Mes listes</div>
+  <div class="panel-body">
+    <p>...</p>
+  </div>
+
+  <!-- List group -->
+<ul class="list-group">
+                <li class="list-group-item">
+                    Ma liste 1
+                  <span class="badge">14</span>
+                    <ul class="list-group-submenu">
+                        <li class="list-group-submenu-item "><span class="glyphicon glyphicon-remove"></span></li>
+                        <li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-pencil"></span></li>
+                    </ul>
+                </li>
+                <li class="list-group-item">
+                    Ma liste 2 <span class="badge">20</span>
+            
+                    <ul class="list-group-submenu">
+                        <li class="list-group-submenu-item "><span class="glyphicon glyphicon-remove"></span></li>
+                        <li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-pencil"></span></li>
+                    </ul>
+                </li>
+                <li class="list-group-item">
+                    Ma liste 3
+                  <span class="badge">50</span>
+                    <ul class="list-group-submenu">
+                        <li class="list-group-submenu-item "><span class="glyphicon glyphicon-remove"></span></li>
+                        <li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-pencil"></span></li>
+                    </ul>
+                </li>
+            </ul>
+  <hr>
 </div>
 
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Mes listes Favorites</div>
+  <div class="panel-body">
+    <p>...</p>
+  </div>
+
+  <!-- List group -->
+<ul class="list-group">
+                <li class="list-group-item">
+                    Ma liste 1
+                  <span class="badge">14</span>
+                    <ul class="list-group-submenu">
+                        <li class="list-group-submenu-item "><span class="glyphicon glyphicon-remove"></span></li>
+                        <li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-ok"></span></li>
+                    </ul>
+                </li>
+                <li class="list-group-item">
+                    Ma liste 2 <span class="badge">20</span>
+            
+                    <ul class="list-group-submenu">
+                        <li class="list-group-submenu-item "><span class="glyphicon glyphicon-remove"></span></li>
+                        <li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-ok"></span></li>
+                    </ul>
+                </li>
+                <li class="list-group-item">
+                    Ma liste 3
+                  <span class="badge">50</span>
+                    <ul class="list-group-submenu">
+                        <li class="list-group-submenu-item "><span class="glyphicon glyphicon-remove"></span></li>
+                        <li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-ok"></span></li>
+                    </ul>
+                </li>
+            </ul>
+  <hr>
+</div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Mes Utilisateurs Favoris</div>
+  <div class="panel-body">
+    <p>...</p>
+  </div>
+
+  <!-- List group -->
+    <ul class="list-group">
+    <li class="list-group-item"><i class="glyphicon glyphicon-user"></i>Utilisateurs Favoris 1<ul class="list-group-submenu"><li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-th-list"></span></li></ul></li>
+    <li class="list-group-item"><i class="glyphicon glyphicon-user"></i>Utilisateurs Favoris 2<ul class="list-group-submenu"><li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-th-list"></span></li></ul></li>
+    <li class="list-group-item"><i class="glyphicon glyphicon-user"></i>Utilisateurs Favoris 3<ul class="list-group-submenu"><li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-th-list"></span></li></ul></li>
+    <li class="list-group-item"><i class="glyphicon glyphicon-user"></i>Utilisateurs Favoris 4<ul class="list-group-submenu"><li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-th-list"></span></li></ul></li>
+    <li class="list-group-item"><i class="glyphicon glyphicon-user"></i>Utilisateurs Favoris 5<ul class="list-group-submenu"><li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-th-list"></span></li></ul></li>
+  </ul>
+  <hr>
+</div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Mes Followers</div>
+  <div class="panel-body">
+    <p>...</p>
+  </div>
+
+  <!-- List group -->
+  <ul class="list-group">
+    <li class="list-group-item"><i class="glyphicon glyphicon-user"></i>Follower 1<ul class="list-group-submenu"><li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-th-list"></span></li></ul></li>
+    <li class="list-group-item"><i class="glyphicon glyphicon-user"></i>Follower 2<ul class="list-group-submenu"><li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-th-list"></span></li></ul></li>
+    <li class="list-group-item"><i class="glyphicon glyphicon-user"></i>Follower 3<ul class="list-group-submenu"><li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-th-list"></span></li></ul></li>
+    <li class="list-group-item"><i class="glyphicon glyphicon-user"></i>Follower 4<ul class="list-group-submenu"><li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-th-list"></span></li></ul></li>
+    <li class="list-group-item"><i class="glyphicon glyphicon-user"></i>Follower 5<ul class="list-group-submenu"><li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-th-list"></span></li></ul></li>
+  </ul>
+  <hr>
+    </div>
+  </article>
+<div>
+</div>
+</div>
 </body>
 </html>
