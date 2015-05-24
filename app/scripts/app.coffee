@@ -39,6 +39,9 @@ app.config ($routeProvider) ->
       .when '/login',
         templateUrl: 'views/login.html'
         controller: 'LoginCtrl'
+      .when '/userInfo',
+        templateUrl: 'views/userinfo.html'
+        controller: 'UserinfoCtrl'
       .otherwise
         redirectTo: '/'
 
@@ -49,8 +52,10 @@ app.config ['$httpProvider', ($httpProvider) ->
       'request': (config) ->
         config.headers = config.headers or {}
         if $window.sessionStorage.getItem('token')
-          #Ajout du token dans le headers
-          config.headers = 'X-User-Token': $window.sessionStorage.getItem 'token'
+          #Headers 
+          config.headers['X-User-Token'] = $window.sessionStorage.getItem 'token' 
+          config.headers['X-User-Email'] = $window.sessionStorage.getItem 'email' 
+          
         return config or $q.when(config)
 
 

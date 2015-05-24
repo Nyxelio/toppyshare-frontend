@@ -22,17 +22,18 @@ app.controller 'UserCtrl', ($scope, $location, $window, serviceAjax) ->
     $scope.jsonRegister = 
       {"user": {"email": $scope.email, "password": $scope.password, "password_confirmation": $scope.password,"name": $scope.pseudo}}
     
-    serviceAjax.register($scope.jsonRegister).success (status) ->
+    serviceAjax.register(($scope.jsonRegister).success (status) ->
       $window.sessionStorage.setItem 'id', data.user.id
       $window.sessionStorage.setItem 'token', data.user.authentication_token
       $window.sessionStorage.setItem 'email', data.user.email
-      console.log status
 
-    serviceAjax.register($scope.jsonRegister).error (status) ->
-      console.log status
+      $location.path '/'
+    ).error ((status) ->
       $scope.erreur = true
-      return 
-    return
+      console.log status
+    )
+     
+  
 
 
 
@@ -65,15 +66,3 @@ return
 
 
 
-#Exemple en js
-#var app = angular.module('testFrontEndApp')
-#app.controller('UserCtrl', function ($scope) {
-#   var email = $scope.email;
-# var password = $scope.password;
-# 
-#    $scope.connectionUser = function(){
-#     serviceAjax.info(id).success(function(status){
-#         console.log(status);
-#    });
-#}
-# });

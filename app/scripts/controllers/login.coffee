@@ -28,7 +28,7 @@ app.controller 'LoginCtrl', ($scope, $location, $window, serviceAjax) ->
       
       $location.path '/'
     )
-    serviceAjax.login($scope.jsonLogin).error((status) ->
+    .error((status) ->
       #On enleve les données qui aurait être stocké
       $window.sessionStorage.removeItem 'id'
       $window.sessionStorage.removeItem 'token'
