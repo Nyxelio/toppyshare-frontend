@@ -31,7 +31,7 @@ app.controller 'UserCtrl', ($scope, $location, $window, serviceAjax) ->
     )
     serviceAjax.register($scope.jsonRegister).error (data, status) ->
       $scope.erreur = true
-      console.log status
+      $scope.erreurMsg = data
     
      
   
