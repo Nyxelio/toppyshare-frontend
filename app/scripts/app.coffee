@@ -21,30 +21,43 @@ app.config ($routeProvider) ->
       .when '/',
         templateUrl: 'views/index.html'
         controller: 'MainCtrl'
+
       .when '/about',
         templateUrl: 'views/about.html'
         controller: 'AboutCtrl'
+
       .when '/user',
         templateUrl: 'views/user.html'
         controller: 'UserCtrl'
+
       .when '/top',
         templateUrl: 'views/top.html'
         controller: 'TopCtrl'
+
       .when '/myTop',
         templateUrl: 'views/mytop.html'
         controller: 'MytopCtrl'
+
       .when '/admin',
         templateUrl: 'views/admin.html'
         controller: 'AdminCtrl'
+
       .when '/login',
         templateUrl: 'views/login.html'
         controller: 'LoginCtrl'
+
       .when '/userInfo',
         templateUrl: 'views/userinfo.html'
         controller: 'UserinfoCtrl'
+
       .when '/about',
         templateUrl: 'views/about.html'
         controller: 'AboutCtrl'
+
+      .when '/userTop/:idUser',
+        templateUrl: 'views/usertop.html'
+        controller: 'UsertopCtrl'
+        
       .otherwise
         redirectTo: '/'
 
