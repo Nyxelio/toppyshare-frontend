@@ -36,7 +36,7 @@ app.config ($routeProvider) ->
 
       .when '/myTop',
         templateUrl: 'views/mytop.html'
-        controller: 'MytopCtrl'
+        controller: 'MyTopCtrl'
 
       .when '/admin',
         templateUrl: 'views/admin.html'

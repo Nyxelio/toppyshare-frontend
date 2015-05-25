@@ -8,7 +8,7 @@
  # Controller of the testFrontEndApp
 ###
 app = angular.module 'testFrontEndApp'
-app.controller 'LoginCtrl', ($scope, $location, $window, serviceAjax) ->
+app.controller 'LoginCtrl', ($scope, $location, $window, $cookies, serviceAjax) ->
 
   #Initialisation de la erreur d'affiché une erreur lors de l'inscription
   $scope.erreur = false
@@ -26,6 +26,9 @@ app.controller 'LoginCtrl', ($scope, $location, $window, serviceAjax) ->
       $window.sessionStorage.setItem 'email', data.user.email
       $window.sessionStorage.setItem 'isLogin', true
       
+      $cookies.authenticated = "1"
+      console.log $cookies.authenticated
+      
       $location.path '/'
     )
     .error((status) ->
@@ -34,6 +37,7 @@ app.controller 'LoginCtrl', ($scope, $location, $window, serviceAjax) ->
       $window.sessionStorage.removeItem 'token'
       $window.sessionStorage.removeItem 'email'
       
+      $cookies.authenticated = undefined
       
       if $window.sessionStorage.getItem 'isLogin'
       	$scope.isLogin = true
