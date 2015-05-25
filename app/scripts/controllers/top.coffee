@@ -13,6 +13,7 @@ app.controller 'TopCtrl', ($scope, serviceAjax) ->
 
     $scope.erreur = false
     $scope.saved = false
+    $scope.category = false
 
     $scope.names = [
       { val: 'bob' }
@@ -69,6 +70,13 @@ app.controller 'TopCtrl', ($scope, serviceAjax) ->
 
 
 
+    serviceAjax.getCategories().success (data, status) ->
+        $scope.categories = data || []
+        console.log $scope.categories
+        return
+      .error (status) ->
+        return
+        
 return
 ###
 	$scope.checkForNameDelete = ($index) ->

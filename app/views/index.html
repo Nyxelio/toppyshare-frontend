@@ -90,14 +90,16 @@
                                 <div class="panel-heading">Les 10 dernières listes partagées
                                 </div>
                                 <div class="panel-body">
-                                <p class=""></p>
-                                    <div class="list-group">	<a href="#" class="list-group-item list-group-item-success">Liste 1</a>
-
-                                    <a href="#" class="list-group-item list-group-item-success">Liste 2</a>	<a href="#" class="list-group-item list-group-item-success">Liste 3</a>
-
-                                    <a href="#" class="list-group-item list-group-item-success">Liste 4</a>
-                                    </div>
+                                                                    
                                 </div>
+                                 <ul class="list-group" ng-repeat="top in tops" ng-hide="noTop">
+  
+  <li class="list-group-item">
+      {{top.title}} ({{top.user.name}}) 
+  </li>
+
+
+</ul>
                         </td>
 
                         <td>
