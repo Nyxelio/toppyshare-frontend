@@ -3,7 +3,7 @@
 <body ng-app="testFrontEndApp">
 <div ng-controller="UsertopCtrl">
  <article>
-    <h1>Mon Toppy</h1>
+    <h1>Les tops de {{name}}</h1>
   <aside>
       <h3>Paneaux de modification</h3>
       <dl>
@@ -100,7 +100,7 @@
 
 <ul class="list-group" ng-show="noTop">
   <li class="list-group-item" >
-    Vous n'avez pas de top.
+    Cette utilisateur n'a pas de top.
    
       <!-- pas pour l'instant 
       <ul class="list-group-submenu">

@@ -10,5 +10,4 @@
 
 app = angular.module 'testFrontEndApp'
 app.controller 'MainCtrl', ($scope, $location, $window, serviceAjax) ->
- 	$scope.idUser = $window.sessionStorage.getItem 'id'
- 	console.log $scope.idUser
+
