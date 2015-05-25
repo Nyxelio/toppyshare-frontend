@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- Controller ici!-->
-<html class="no-js">
+<html class="no-js" ng-controller="MainCtrl">
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -72,10 +72,10 @@
                     <li><a href="#/user">S'enregistrer</a></li>
                     
                     
-                    <li class="dropdown">
+                    <li class="dropdown" ng-show="true">
                         <a class="dropdown-toggle" data-toggle="dropdown">
                             <span class="glyphicon glyphicon-user"></span>&nbsp;
-                            <strong class="">USERNAME</strong>
+                            <strong class="">{{username}}</strong>
                             <span class="glyphicon glyphicon-chevron-down"></span>
                         </a>
 
@@ -88,8 +88,8 @@
                                         </div>
                                         
                                         <div class="col-lg-8">
-                                                <p class="text-left"><strong class="">PSEUDONYME</strong></p>
-                                                <p class="text-left small">prenom.nom@email.com</p>
+                                                <p class="text-left"><strong class="">{{$scope.username}}</strong></p>
+                                                <p class="text-left small">{{$scope.email}}</p>
 
                                                 <hr>
                                                 

@@ -25,9 +25,12 @@ app.controller 'LoginCtrl', ($scope, $location, $window, $cookies, serviceAjax) 
       $window.sessionStorage.setItem 'token', data.user.authentication_token
       $window.sessionStorage.setItem 'email', data.user.email
       $window.sessionStorage.setItem 'isLogin', true
+      $window.sessionStorage.setItem 'name', data.user.name
       
+      $scope.$root.$broadcast "userLogged", {username: data.user.name, email: data.user.email, isLogin: true }
+
       $cookies.authenticated = "1"
-      console.log $cookies.authenticated
+      console.log data.user.name, $window.sessionStorage.getItem 'name'
       
       $location.path '/'
     )

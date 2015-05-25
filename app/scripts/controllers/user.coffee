@@ -26,6 +26,7 @@ app.controller 'UserCtrl', ($scope, $location, $window, serviceAjax) ->
       $window.sessionStorage.setItem 'id', data.id
       $window.sessionStorage.setItem 'token', data.authentication_token
       $window.sessionStorage.setItem 'email', data.email
+      $window.sessionStorage.setItem 'name', data.name
 
       $location.path '/login'
       return
