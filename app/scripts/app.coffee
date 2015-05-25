@@ -58,6 +58,12 @@ app.config ($routeProvider) ->
         templateUrl: 'views/usertop.html'
         controller: 'UsertopCtrl'
         
+      .when '/categories',
+        templateUrl: 'views/categories.html'
+        controller: 'CategoriesCtrl'
+      .when '/details',
+        templateUrl: 'views/details.html'
+        controller: 'DetailsCtrl'
       .otherwise
         redirectTo: '/'
 
