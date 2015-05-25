@@ -1,0 +1,23 @@
+<html> <link rel="stylesheet" href="styles/mytop.css"> <body ng-app="testFrontEndApp"> <div ng-controller="UsertopCtrl"> <article> <h1>Les tops de {{myTops.user.name}}</h1> <aside> <h3>Paneaux de modification</h3> <dl> <dd><div class="container"> <div class="row"> <div class="col-md-6"> <div class="panel panel-primary"> <div class="panel-heading"> <span class="glyphicon glyphicon-list"></span>TITRE DE LA LISTE <div class="pull-right action-buttons"> <div class="btn-group pull-right"> <button type="button" clascopess="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown"> <span class="glyphicon glyphicon-cog" style="margin-right: 0px"></span> </button> <ul class="dropdown-menu slidedown"> <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-pencil"></span>Edit</a></li> <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-trash"></span>Delete</a></li> <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-flag"></span>Flag</a></li> </ul> </div> </div> </div> <div class="panel-body"> <ul class="list-group"> <li class="list-group-item"> ITEM1 <div class="pull-right action-buttons"> <a><span class="glyphicon glyphicon-pencil"></span></a> <a class="trash"><span class="glyphicon glyphicon-trash"></span></a> <a class="flag"><span class="glyphicon glyphicon-flag"></span></a> </div> </li> <li class="list-group-item"> ITEM2 <div class="pull-right action-buttons"> <a><span class="glyphicon glyphicon-pencil"></span></a> <a class="trash"><span class="glyphicon glyphicon-trash"></span></a> <a class="flag"><span class="glyphicon glyphicon-flag"></span></a> </div> </li> <li class="list-group-item"> ITEM3 <div class="pull-right action-buttons"> <a><span class="glyphicon glyphicon-pencil"></span></a> <a class="trash"><span class="glyphicon glyphicon-trash"></span></a> <a class="flag"><span class="glyphicon glyphicon-flag"></span></a> </div> </li> <li class="list-group-item"> ITEM4 <div class="pull-right action-buttons"> <a><span class="glyphicon glyphicon-pencil"></span></a> <a class="trash"><span class="glyphicon glyphicon-trash"></span></a> <a class="flag"><span class="glyphicon glyphicon-flag"></span></a> </div> </li> <li class="list-group-item"> ITEM5 <div class="pull-right action-buttons"> <a><span class="glyphicon glyphicon-pencil"></span></a> <a class="trash"><span class="glyphicon glyphicon-trash"></span></a> <a class="flag"><span class="glyphicon glyphicon-flag"></span></a> </div> </li> </ul> </div> </div> </div> </div> </div>  </dl> </aside> <div class="panel panel-default"> <!-- Default panel contents --> <div class="panel-heading">Ses listes</div> <!-- List group --> <ul class="list-group" ng-repeat="top in myTops" ng-hide="noTop"> <a href="#userTop/{{top.id}}"> <li class="list-group-item"> {{top.title}} <span class="badge">{{top.items.forked_top_id.length}}</span> <!-- 
+          <li class="list-group-submenu-item "><span class="glyphicon glyphicon-remove"></span></li>
+          <li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-pencil"></span></li> --> </li> </a> </ul> <ul class="list-group" ng-show="noTop"> <li class="list-group-item"> Cette utilisateur n'a pas de top. <!-- pas pour l'instant 
+      <ul class="list-group-submenu">
+          <li class="list-group-submenu-item "><span class="glyphicon glyphicon-remove"></span></li>
+          <li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-pencil"></span></li>
+      </ul> --> </li>  </ul> </div> <div class="panel panel-default"> <!-- Default panel contents --> <div class="panel-heading">Ses listes Favorites</div> <!-- List group --> <ul class="list-group"> <li class="list-group-item"> Ma liste 1 <span class="badge">14</span> <ul class="list-group-submenu"> <li class="list-group-submenu-item"><span class="glyphicon glyphicon-remove"></span></li> <li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-ok"></span></li> </ul> </li> <!--
+  <li class="list-group-item">
+      Ma liste 2 <span class="badge">20</span>
+
+      <ul class="list-group-submenu">
+          <li class="list-group-submenu-item "><span class="glyphicon glyphicon-remove"></span></li>
+          <li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-ok"></span></li>
+      </ul>
+  </li>
+  <li class="list-group-item">
+      Ma liste 3
+    <span class="badge">50</span>
+      <ul class="list-group-submenu">
+          <li class="list-group-submenu-item "><span class="glyphicon glyphicon-remove"></span></li>
+          <li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-ok"></span></li>
+      </ul>
+  </li> --> </ul> </div> </article> <div> </div> </div>  

@@ -1,0 +1,23 @@
+<html> <link rel="stylesheet" href="styles/mytop.css"> <body ng-app="testFrontEndApp"> <div> <article> <h1>Mon Toppy</h1> <div class="panel panel-default"> <!-- Default panel contents --> <div class="panel-heading">Mes listes <span class="badge">{{myTops.length || 0}}</span> <div class="pull-right"> <a href="#/top" class="btn btn-xs btn-success"><i class="glyphicon glyphicon-plus"></i> Ajouter un top</a> </div> </div> <!-- List group --> <ul class="list-group" ng-repeat="top in myTops" ng-hide="noTop"> <li class="list-group-item"> {{top.title}} <span class="pull-right"> <a class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></a> <a class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></a> </span> <span class="badge">{{top.items.forked_top_id.length}}</span> <!-- 
+          <li class="list-group-submenu-item "><span class="glyphicon glyphicon-remove"></span></li>
+          <li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-pencil"></span></li> --> </li> </ul> <ul class="list-group" ng-show="noTop"> <li class="list-group-item"> Vous n'avez pas de top. <!-- pas pour l'instant 
+      <ul class="list-group-submenu">
+          <li class="list-group-submenu-item "><span class="glyphicon glyphicon-remove"></span></li>
+          <li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-pencil"></span></li>
+      </ul> --> </li>  </ul> </div> <div class="panel panel-default"> <!-- Default panel contents --> <div class="panel-heading">Mes listes Favorites</div> <!-- List group --> <ul class="list-group"> <li class="list-group-item"> Ma liste 1 <span class="badge">14</span> <ul class="list-group-submenu"> <li class="list-group-submenu-item"><span class="glyphicon glyphicon-remove"></span></li> <li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-ok"></span></li> </ul> </li> <!--
+  <li class="list-group-item">
+      Ma liste 2 <span class="badge">20</span>
+
+      <ul class="list-group-submenu">
+          <li class="list-group-submenu-item "><span class="glyphicon glyphicon-remove"></span></li>
+          <li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-ok"></span></li>
+      </ul>
+  </li>
+  <li class="list-group-item">
+      Ma liste 3
+    <span class="badge">50</span>
+      <ul class="list-group-submenu">
+          <li class="list-group-submenu-item "><span class="glyphicon glyphicon-remove"></span></li>
+          <li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-ok"></span></li>
+      </ul>
+  </li> --> </ul> </div> <div class="panel panel-default"> <!-- Default panel contents --> <div class="panel-heading">Mes Utilisateurs Favoris</div> <!-- List group --> <ul class="list-group" ng-repeat="user in userFav" ng-hide="noUser"> <a href="#userTop/{{user.id}}"> <li class="list-group-item"><i class="glyphicon glyphicon-user"></i> {{user.name}}<ul class="list-group-submenu"><li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-th-list"></span></li></ul></li> </a> </ul> <ul class="list-group" ng-repeat="user in userFav" ng-show="noUser"> <li class="list-group-item"><i class="glyphicon glyphicon-user"></i> Pas d'utilisateur favorie<ul class="list-group-submenu"><li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-th-list"></span></li></ul></li> </ul> </div> <div class="panel panel-default"> <!-- Default panel contents --> <div class="panel-heading">Mes Followers</div> <!-- List group --> <ul class="list-group" ng-repeat="follower in myFollowers" ng-hide="notFollow"> <a href="#userTop/{{follower.id}}"> <li class="list-group-item"><i class="glyphicon glyphicon-user"></i> {{follower.name}}<ul class="list-group-submenu"><li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-th-list"></span></li></ul></li> </a> </ul> <!-- En cas d'absence de follower --> <ul class="list-group" ng-show="notFollow"> <li class="list-group-item"><i class="glyphicon glyphicon-user"></i>Pas de follower<ul class="list-group-submenu"><li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-th-list"></span></li></ul></li> </ul>  </div> </article> <div> </div> </div>  
