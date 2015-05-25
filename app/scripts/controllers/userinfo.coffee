@@ -9,7 +9,7 @@
 ###
 app = angular.module 'testFrontEndApp'
 app.controller 'UserinfoCtrl', ($scope, serviceAjax, $window, $location) ->
-	
+
 	serviceAjax.getUserInfo().success((data, status) ->
 		$scope.info = data
 	).error (status) ->
@@ -22,3 +22,4 @@ app.controller 'UserinfoCtrl', ($scope, serviceAjax, $window, $location) ->
 			$location.path '/'
 		).error (status) ->
 			console.log status
+

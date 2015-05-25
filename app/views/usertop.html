@@ -3,7 +3,7 @@
 <body ng-app="testFrontEndApp">
 <div ng-controller="UsertopCtrl">
  <article>
-    <h1>Les tops de {{name}}</h1>
+    <h1>Les tops de {{myTops.user.name}}</h1>
   <aside>
       <h3>Paneaux de modification</h3>
       <dl>
@@ -15,7 +15,7 @@
                     <span class="glyphicon glyphicon-list"></span>TITRE DE LA LISTE
                     <div class="pull-right action-buttons">
                         <div class="btn-group pull-right">
-                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            <button type="button" clascopess="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
                                 <span class="glyphicon glyphicon-cog" style="margin-right: 0px;"></span>
                             </button>
                             <ul class="dropdown-menu slidedown">
@@ -80,7 +80,7 @@
 
 <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading">Mes listes</div>
+  <div class="panel-heading">Ses listes</div>
 
   <!-- List group -->
 <ul class="list-group" ng-repeat="top in myTops" ng-hide="noTop">
@@ -116,7 +116,7 @@
 
 <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading">Mes listes Favorites</div>
+  <div class="panel-heading">Ses listes Favorites</div>
   <!-- List group -->
 <ul class="list-group">
   <li class="list-group-item" >
@@ -148,33 +148,6 @@
 
 </div>
 
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading">Mes Utilisateurs Favoris</div>
-  <!-- List group -->
-  <ul class="list-group" ng-repeat="user in userFav" ng-hide="noUser">
-    <li class="list-group-item"><i class="glyphicon glyphicon-user"></i> {{user.name}}<ul class="list-group-submenu"><li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-th-list"></span></li></ul></li>
-  </ul>
-
-  <ul class="list-group" ng-repeat="user in userFav" ng-show="noUser">
-    <li class="list-group-item"><i class="glyphicon glyphicon-user"></i> Pas d'utilisateur favorie<ul class="list-group-submenu"><li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-th-list"></span></li></ul></li>
-  </ul>
-</div>
-
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading">Mes Followers</div>
-
-  <!-- List group -->
-  <ul class="list-group" ng-repeat="follower in myFollowers" ng-hide="notFollow">
-    <li class="list-group-item" ><i class="glyphicon glyphicon-user"></i> {{follower.name}}<ul class="list-group-submenu"><li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-th-list"></span></li></ul></li>   
-  </ul>
-  <!-- En cas d'absence de follower -->
-  <ul class="list-group" ng-show="notFollow">
-      <li class="list-group-item" ><i class="glyphicon glyphicon-user"></i>Pas de follower<ul class="list-group-submenu"><li class="list-group-submenu-item warning"><span class="glyphicon glyphicon-th-list"></span></li></ul></li>     
-  </ul>  
-
-</div>
 </article>
 <div>
 </div>

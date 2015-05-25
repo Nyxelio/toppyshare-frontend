@@ -14,8 +14,9 @@ app.controller 'UsertopCtrl', ($scope, $routeParams, $window,serviceAjax) ->
   #Partie init mes tops
   serviceAjax.getAllTopUser(id).success((data, status) ->
     $scope.myTops = data
-    $scope.i = 1
-    if $scope.myFollowers
+    
+
+    if $scope.myTops
       $scope.noTop = false
     else
       $scope.noTop = true
@@ -25,7 +26,7 @@ app.controller 'UsertopCtrl', ($scope, $routeParams, $window,serviceAjax) ->
   )
 
   #Partie user favorie 
-  serviceAjax.getAllFollowerCurrentUser().success((data, status) -> 
+  serviceAjax.getAllFollowerCurrentUser(id).success((data, status) -> 
     $scope.userFav = data
 
     if $scope.userFav
