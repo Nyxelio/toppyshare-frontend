@@ -4,112 +4,25 @@
 <div>
  <article>
     <h1>Mon Toppy</h1>
-<!-- Modal -->
-    <!-- Appel du bouton de modification 
-    <div class="container">
-    <!-- Modal
-    <a class="btn btn-info" href="#info" data-toggle="modal"><h4><i class="glyphicon glyphicon-edit"></i> Details </h4></a>
-    <!-- Modal 
-    <div class="modal fade" id="info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header modal-header-info">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h1><i class="glyphicon glyphicon-thumbs-up"> Paneaux de modification</i></h1>
-                </div>
-                <div class="modal-body">
-                <div class="container">
-    <div class="row">
-    <!--<ng-app="MyTopCtrl">
-        <div class="col-md-6">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <span class="glyphicon glyphicon-list"></span> TITRE DE LA LISTE
-                    <div class="pull-right action-buttons">
-                        <div class="btn-group pull-right">
-                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-                                <span class="glyphicon glyphicon-cog" style="margin-right: 0px;"></span>
-                            </button>
-                            <ul class="dropdown-menu slidedown">
-                                <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-pencil"></span>Edit</a></li>
-                                <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-trash"></span>Delete</a></li>
-                                <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-flag"></span>Flag</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                                    ITEM1
-                            <div class="pull-right action-buttons">
-                                <a><span class="glyphicon glyphicon-pencil"></span></a>
-                                <a class="trash"><span class="glyphicon glyphicon-trash"></span></a>
-                                <a class="flag"><span class="glyphicon glyphicon-flag"></span></a>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                                    ITEM2
-                            <div class="pull-right action-buttons">
-                                <a><span class="glyphicon glyphicon-pencil"></span></a>
-                                <a class="trash"><span class="glyphicon glyphicon-trash"></span></a>
-                                <a class="flag"><span class="glyphicon glyphicon-flag"></span></a>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                                    ITEM3
-                            <div class="pull-right action-buttons">
-                                <a><span class="glyphicon glyphicon-pencil"></span></a>
-                                <a class="trash"><span class="glyphicon glyphicon-trash"></span></a>
-                                <a class="flag"><span class="glyphicon glyphicon-flag"></span></a>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                                    ITEM4
-                            <div class="pull-right action-buttons">
-                                <a><span class="glyphicon glyphicon-pencil"></span></a>
-                                <a class="trash"><span class="glyphicon glyphicon-trash"></span></a>
-                                <a class="flag"><span class="glyphicon glyphicon-flag"></span></a>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                                    ITEM5
-                            <div class="pull-right action-buttons">
-                                <a><span class="glyphicon glyphicon-pencil"></span></a>
-                                <a class="trash"><span class="glyphicon glyphicon-trash"></span></a>
-                                <a class="flag"><span class="glyphicon glyphicon-flag"></span></a>
-                            </div>
-                        </li>
-                    </ul>
-    <div class="modal-footer">
-                <a href="https://www.facebook.com/bootsnipp"><i id="social" class="fa fa-facebook-square fa-3x social-fb"></i></a>
-              <a href="https://twitter.com/bootsnipp"><i id="social" class="fa fa-twitter-square fa-3x social-tw"></i></a>
-              <a href="https://plus.google.com/+Bootsnipp-page"><i id="social" class="fa fa-google-plus-square fa-3x social-gp"></i></a>
-              <a href="mailto:bootsnipp@gmail.com"><i id="social" class="fa fa-envelope-square fa-3x social-em"></i></a>
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-      <hr>
-      
-                </div><!-- Div footer
-            </div><!-- /.modal-content 
-        </div><!-- /.modal-dialog 
-    </div><!-- /.modal 
-    <!-- Modal -->
-    <a href="https://www.facebook.com/bootsnipp"><i id="social" class="fa fa-facebook-square fa-3x social-fb"></i></a>
-    <a href="https://twitter.com/bootsnipp"><i id="social" class="fa fa-twitter-square fa-3x social-tw"></i></a>
-    <a href="https://plus.google.com/+Bootsnipp-page"><i id="social" class="fa fa-google-plus-square fa-3x social-gp"></i></a>
-    <a href="mailto:bootsnipp@gmail.com"><i id="social" class="fa fa-envelope-square fa-3x social-em"></i></a>
-    </div>
-    <!-- Modal -->
+
 
 <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading">Mes listes</div>
+  <div class="panel-heading">Mes listes <span class="badge">{{myTops.length || 0}}</span>
+    <div class="pull-right">
+      <a href="#/top" class="btn btn-xs btn-success"><i class="glyphicon glyphicon-plus"></i> Ajouter un top</a>
+      </div>
+    </div>
 
   <!-- List group -->
 <ul class="list-group" ng-repeat="top in myTops" ng-hide="noTop">
   
   <li class="list-group-item" >
-      {{top.title}}
+      {{top.title}} 
+      <span class="pull-right">
+      <a class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></a>
+      <a class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></a>
+      </span>
     <span class="badge">{{top.items.forked_top_id.length}}</span>
   
          <!-- 
