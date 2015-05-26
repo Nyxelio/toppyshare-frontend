@@ -5,7 +5,12 @@
  <article>
     <h1>Mon Toppy</h1>
 
+ <div class="alert alert-success" ng-show="deleted">
+             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
+                <b>Votre top a été supprimé.</b>
+               
+        </div>
 <div class="panel panel-default">
   <!-- Default panel contents -->
   <div class="panel-heading">Mes listes <span class="badge">{{myTops.length || 0}}</span>
@@ -18,10 +23,10 @@
 <ul class="list-group" ng-repeat="top in myTops" ng-hide="noTop">
   
   <li class="list-group-item" >
-      {{top.title}} 
+      <a href="#/show/{{top.id}}">{{top.title}}</a>
       <span class="pull-right">
       <a class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></a>
-      <a class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></a>
+      <a ng-click="deleteTop(top.id, $index)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></a>
       </span>
     <span class="badge">{{top.items.forked_top_id.length}}</span>
   

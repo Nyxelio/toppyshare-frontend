@@ -8,8 +8,9 @@
  # Controller of the testFrontEndApp
 ###
 app = angular.module 'testFrontEndApp'
-app.controller 'MyTopCtrl', ($scope, $window, $cookies, serviceAjax) ->
+app.controller 'MyTopCtrl', ($scope, $routeParams, $window, $cookies, serviceAjax) ->
   id = $window.sessionStorage.getItem 'id'
+  deleted = false
   
   #Partie init mes tops
   serviceAjax.getAllTopUser(id).success (data, status) ->
@@ -59,7 +60,26 @@ app.controller 'MyTopCtrl', ($scope, $window, $cookies, serviceAjax) ->
         window.location = '/#/login'
     return
     
-  return
+  
+  $scope.deleteTop = (id, $index)->
+ 
+    console.log $index
+    
+    if id == '' || id == undefined
+        return
+    
+    serviceAjax.deleteTop(id).success (data, status) ->
+        $scope.deleted = true
+        $scope.myTops.splice $index, 1
+
+        return
+    .error (status) ->
+        console.log status
+        $scope.deleted = false
+        return
+    
+    return
+
 
 #Gestion ListeGroup
 ###$ ->

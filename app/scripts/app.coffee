@@ -33,6 +33,10 @@ app.config ($routeProvider) ->
       .when '/top',
         templateUrl: 'views/top.html'
         controller: 'TopCtrl'
+        
+      .when '/top/delete/:deleteId',
+        templateUrl: 'views/top.html'
+        controller: 'TopCtrl'    
 
       .when '/myTop',
         templateUrl: 'views/mytop.html'
@@ -64,6 +68,9 @@ app.config ($routeProvider) ->
       .when '/details',
         templateUrl: 'views/details.html'
         controller: 'DetailsCtrl'
+      .when '/show/:topId',
+        templateUrl: 'views/show.html'
+        controller: 'ShowCtrl'
       .otherwise
         redirectTo: '/'
 

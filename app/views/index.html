@@ -40,85 +40,85 @@
 
             <hr>
             <!-- Liste de contenus -->
-            <div class="list-group"> <a href="#" class="list-group-item active">
-                <h4 class="list-group-item-heading">Souhaitons la bienvenue!</h4>
-                <p class="list-group-item-text">USER1 s'est inscrit et à créer sa première liste!</p>
-                </a>
-                <a href="#" class="list-group-item primary">
-                <h4 class="list-group-item-heading">Souhaitons la bienvenue!</h4>
-                <p class="list-group-item-text">USER2 s'est inscrit et à créer sa première liste!</p>
-                </a>
+            <div class="list-group">
                 <a href="#" class="list-group-item active">
                 <h4 class="list-group-item-heading">Souhaitons la bienvenue!</h4>
-                <p class="list-group-item-text">USER3 s'est inscrit et à créer sa première liste!</p>
+                </a>
+              
+                <a href="#" class="list-group-item" ng-repeat="top in tops">
+                <!--<h4 class="list-group-item-heading">Souhaitons la bienvenue!</h4>-->
+                <p class="list-group-item-text">{{top.user.name}} s'est inscrit et a créé sa première liste!</p>
                 </a>
             </div>
             <hr>
-
-            <!-- Default panel contents -->
-            <div class="panel panel-info">
-            <!-- Default panel contents -->
-            <div class="panel-heading">STATISTIQUES
-            </div>
-            <div class="panel-body">
-                <p class="">Description</p>
-            </div>
-            <!-- Table -->
-            <table class="table">
-                <tbody>
-                    <tr>
-                        <td>
-                            <div class="panel panel-info">
+            
+            <div class="row">
+            <div class="panel panel-info col-md-4">
                                 <center>
-                                    <p class="">WorldClass</p>
+                                    WorldClass
                                 </center>
-                                <div class="panel-heading">STATISTIQUES
+                                <div class="panel-heading">Les 10 plus beaux succès
                                 </div>
+                  <br/>
+                                <div id="worldclass_char"></div>
+                      <br/>
                                 <div class="panel-body">
-                                    <canvas id="radar" class="chart chart-radar" data="data" labels="labels"></canvas>
-                                    <div class="list-group">	<a href="#" class="list-group-item list-group-item-info">Liste 1</a>
-                                        <a href="#" class="list-group-item list-group-item-info">Liste 2</a>
-                                        <a href="#" class="list-group-item list-group-item-info">Liste 3</a>
-                                        <a href="#" class="list-group-item list-group-item-info">Liste 4</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="panel panel-success">
-                                <center class="">What's up there?</center>
-                                <div class="panel-heading">Les 10 dernières listes partagées
-                                </div>
-                                <div class="panel-body">
-                                                                    
-                                </div>
-                                 <ul class="list-group" ng-repeat="top in tops" ng-hide="noTop">
+                                </div>    
+                                    <!--<canvas id="radar" class="chart chart-radar" data="data" labels="labels"></canvas>-->
+                                    <ul class="list-group" ng-hide="noTop">
   
-  <li class="list-group-item">
-      {{top.title}} ({{top.user.name}}) 
+  <li class="list-group-item" ng-repeat="top in tops" >
+      <a href="#/show/{{top.id}}">{{top.title}} ({{top.category}})</a> 
   </li>
 
 
-</ul>
-                        </td>
+                    </ul>
+                                
+                            </div>
+                <div class="panel panel-success  col-md-4">
+                                <center class="">What's up there?</center>
+                                <div class="panel-heading">Les 10 dernières listes
+                                </div>
+                     <br/>
+                                <div id="tops_char"></div>
+                      <br/>
+                                <div class="panel-body">
+                                                                    
+                                </div>
+                                 <ul class="list-group" ng-hide="noTop">
+  
+  <li class="list-group-item" ng-repeat="top in tops" >
+      <a href="#/show/{{top.id}}">{{top.title}} ({{top.user.name}})</a> 
+  </li>
 
-                        <td>
-                            <div class="panel panel-warning">
+
+                    </ul></div>
+                  <div class="panel panel-warning  col-md-4">
                                 <center class="">Toppy's Awards</center>
                                 <div class="panel-heading">Les 10 Meilleurs utilisateurs</div>
+                      <br/>
+                                <div id="user_char"></div>
+                      <br/>
                                 <div class="panel-body">
-                                    <p class=""></p>
-                                    <div class="list-group">
-                                        <a href="#" class="list-group-item list-group-item-warning">Liste 1</a>
-                                        <a href="#" class="list-group-item list-group-item-warning">Liste 2</a>
-                                        <a href="#" class="list-group-item list-group-item-warning">Liste 3</a>
-                                        <a href="#" class="list-group-item list-group-item-warning">Liste 4</a>
-                                    </div>
+                      </div>
+                                    <ul class="list-group" ng-hide="noTop">
+
+                                      <li class="list-group-item" ng-repeat="top in tops" >
+                                          <a href="#/userTop/{{top.user.id}}">{{top.user.name}}</a> 
+                                      </li>
+
+
+                                </ul>
                                 </div>
                             </div>
-                        </td>
-                    </tr>
+                
+            </div>
 
+           
+            <!-- Table -->
+            <table class="table">
+                <tbody>
+        
                     <tr>
                         <td><a href="#" class="">+ de stats ici</a>
                         </td>
@@ -129,7 +129,6 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
     </article>
 
 

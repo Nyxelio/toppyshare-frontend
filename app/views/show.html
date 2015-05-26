@@ -1,0 +1,47 @@
+<div class="row">
+<div id="tops" class="col-md-12">
+    <form class="form-horizontal" name="loginForm" >
+        <div class="form-group">
+			<!--<label class="control-label col-md-2" for="title">Titre</label>-->
+            <div class="col-md-12">
+                <h1>{{top.title}}</h1>
+            </div>
+            
+            <div class="col-md-12">
+              <p>{{top.category}}</p>
+            </div>
+        </div>
+		<br/>
+        <div class="panel panel-default">
+            <div class="panel-heading">Mes items
+            </div>
+          <div class="panel-body">
+         
+		<div class="form-group has-feedback transition">
+            <div ng-repeat="item in top.items">
+                <div class="input-group">
+                    <div class="input-group-addon" style="border-radius:0;background-color: #337ab7;color:white"><b>#{{$index+1}}</b></div>
+                <input class="form-control form-inline player" type='text'
+                tabindex='{{$index + 1}}'
+                ng-change='checkForNameDelete($index)'
+                ng-model='item.title'
+                ng-class="{'last-player': $index == tops.length-1}" style="border:0;border-top:1px solid #cccccc;border-bottom:1px solid #cccccc;">
+                <i class="fa fa-bars form-control-feedback"></i>
+                </div>
+            </div>
+		</div>
+		<!--- tabindex logic is +1 due to 0 start of $index and then add on to start at the correct point, make sure to use tabindex='{{players.length + offset}}' on everything that gets focus after this -->
+       
+		
+               </div>
+            <div class="panel-footer">
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-md-6">
+                <a href="#/" class="btn btn-link col-md-12 btn-large">Retour</a>  
+            </div>
+        </div>
+                </div>
+        </div>
+    </form>
+</div>
+</div>    

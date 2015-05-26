@@ -9,7 +9,9 @@
 ###
 app = angular.module 'testFrontEndApp'
 
-app.controller 'TopCtrl', ($scope, serviceAjax) ->
+app.controller 'TopCtrl', ($scope, $routeParams, $window,serviceAjax) ->
+
+    deleteId = $routeParams.deleteId
 
     $scope.erreur = false
     $scope.saved = false
